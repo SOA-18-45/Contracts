@@ -8,3 +8,5 @@ Wszystkie kontrakty i wszystkie klasy muszą być publiczne.
 Namespace to "Contracts".
 
 Gdy każdy kontrakt będzie w repozytorium, ja wszystkie skompiluję i wrzuce do repozytorium.
+
+Wszystkie ID'ki mają być typu Guid.
