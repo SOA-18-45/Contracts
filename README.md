@@ -7,4 +7,4 @@ Każdy zespół wrzuca tutaj jeden plik o nazwie NazwaInterfejsu.cs, np. IAccoun
 Wszystkie kontrakty i wszystkie klasy muszą być publiczne.
 Namespace to "Contracts".
 
-Gdy każdy kontrakt będzie w repozytorium, ja wszystkie skompiluję i do repozytorium.
+Gdy każdy kontrakt będzie w repozytorium, ja wszystkie skompiluję i wrzuce do repozytorium.
