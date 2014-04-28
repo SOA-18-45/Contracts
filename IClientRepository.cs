@@ -13,10 +13,10 @@ namespace Contracts
         long CreateClient(string name, string lastName, string PESEL, string address);
 
         [OperationContract]
-        IEnumerable<Client> GetClientInformationById(Guid idClient);
+        Client GetClientInformationById(Guid idClient);
 
         [OperationContract]
-        IEnumerable<Client> GetClientInformationByName(string name, string lastName);
+        Client GetClientInformationByName(string name, string lastName);
 
         [OperationContract]
         bool RemoveClientByName(string name, string lastName);
