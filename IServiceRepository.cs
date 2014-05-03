@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,38 +7,29 @@ using System.Runtime.Serialization;
 
 namespace Contracts
 {
-    class Program
+    [DataContract]
+    public class AccountInfo
     {
-        static void Main(string[] args)
-        {
+        [DataMember]
+        public string ServiceName { get; set; }
 
-        }
+        [DataMember]
+        public string ServiceAddress { get; set; }
     }
 
     [ServiceContract]
     public interface IServiceRepository
     {
         [OperationContract]
-        public void RegisterService(string name, string address);
+        public void registerService(string serviceName, string serviceAddress);
 
         [OperationContract]
-        public void UnregisterService(string name);
+        public void unregisterService(string serviceName);
 
         [OperationContract]
-        public string GetServiceLocation(string name);
+        public string getServiceAddress(string serviceName);
 
         [OperationContract]
-        public bool IsAlive(string name);
-    }
-
-    [DataContract]
-    public class AccountInfo
-    {
-        [DataMember]
-        public string Name { get; set; }
-
-        [DataMember]
-        public string Address { get; set; }
-
+        public void isAlive(string serviceName);
     }
 }
