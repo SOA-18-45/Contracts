@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Runtime.Serialization;
-using System.Guid;
 
 
 namespace Contracts

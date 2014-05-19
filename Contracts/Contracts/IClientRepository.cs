@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using System.Runtime.Serialization;
 
 namespace Contracts
 {
@@ -13,10 +14,10 @@ namespace Contracts
         long CreateClient(string name, string lastName, string PESEL, string address);
 
         [OperationContract]
-        Client GetClientInformationById(Guid idClient);
+        ServiceClient GetClientInformationById(Guid idClient);
 
         [OperationContract]
-        Client GetClientInformationByName(string name, string lastName);
+        ServiceClient GetClientInformationByName(string name, string lastName);
 
         [OperationContract]
         bool RemoveClientByName(string name, string lastName);
@@ -25,7 +26,7 @@ namespace Contracts
         bool RemoveClientById(Guid idClient);
     }
     [DataContract]
-    public class Client
+    public class ServiceClient
     {
         [DataMember]
         public Guid IdClient { get; set; }

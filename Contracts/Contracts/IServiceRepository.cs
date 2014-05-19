@@ -21,15 +21,15 @@ namespace Contracts
     public interface IServiceRepository
     {
         [OperationContract]
-        public void registerService(string serviceName, string serviceAddress);
+        void registerService(string serviceName, string serviceAddress);
 
         [OperationContract]
-        public void unregisterService(string serviceName);
+        void unregisterService(string serviceName);
 
         [OperationContract]
-        public string getServiceAddress(string serviceName);
+        string getServiceAddress(string serviceName);
 
         [OperationContract]
-        public void isAlive(string serviceName);
+        void isAlive(string serviceName);
     }
 }
