@@ -1,12 +1,10 @@
 Contracts
 =======
 
-Wrzucajcie tutaj Wasze pliki z kontraktami.
-Każdy zespół wrzuca tutaj jeden plik o nazwie NazwaInterfejsu.cs, np. IAccountRepository.cs.
+Pliki z contractami należy wklejać do katalogu Contracts/Contracs/
+Następnie otwieramy projekt Contracts/Contracts.sln.
+Jeśli dodawaliśmy nowy plik z kontraktem wówczas dodajemy go do projektu: Project -> Add existing item.
 
-Wszystkie kontrakty i wszystkie klasy muszą być publiczne.
-Namespace to "Contracts".
+Tworzymy commit ze zmianami i wysyłamy je (git push) do repozytorium.
 
-Gdy każdy kontrakt będzie w repozytorium, ja wszystkie skompiluję i wrzuce do repozytorium.
-
-Wszystkie ID'ki mają być typu Guid.
+**Obowiązek zbudowania Contracts.dll jest po stronie korzystającego z Contracts.dll, nie po stronie osoby dodającej nowe kontrakty.**
