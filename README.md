@@ -15,3 +15,4 @@ Tworzymy commit ze zmianami i wysyłamy je (git push) do repozytorium.
  2. "Add Reference..."
  3. "Browse"
  4. Namierzamy plik Contracts.dll (Contracts/Contracts/bin/Debug/Contracts.dll)
+ 5. Dopisujemy do pliku z programem ```using Contracts;```
