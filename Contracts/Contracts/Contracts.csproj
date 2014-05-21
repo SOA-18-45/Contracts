@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAccountRepository.cs" />
+    <Compile Include="IAuditorService.cs" />
     <Compile Include="ICanTransferMoney.cs" />
     <Compile Include="IClientRepository.cs" />
     <Compile Include="IClientService.cs" />
