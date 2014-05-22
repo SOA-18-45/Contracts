@@ -11,22 +11,22 @@ namespace Contracts
     public interface IClientRepository
     {
         [OperationContract]
-        long CreateClient(string name, string lastName, string PESEL, string address);
+        Guid CreateClient(string name, string lastName, string PESEL, string address);
 
         [OperationContract]
-        ServiceClient GetClientInformationById(Guid idClient);
+        Client GetClientInformationById(Guid idClient);
 
         [OperationContract]
-        ServiceClient GetClientInformationByName(string name, string lastName);
+        Client GetClientInformationByName(string name, string lastName);
 
         [OperationContract]
-        bool RemoveClientByName(string name, string lastName);
+        void RemoveClientByName(string name, string lastName);
 
         [OperationContract]
-        bool RemoveClientById(Guid idClient);
+        void RemoveClientById(Guid idClient);
     }
     [DataContract]
-    public class ServiceClient
+    public class Client
     {
         [DataMember]
         public Guid IdClient { get; set; }
