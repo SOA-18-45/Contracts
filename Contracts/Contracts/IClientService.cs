@@ -16,6 +16,11 @@ namespace Contracts
 
     }
 
+    /*
+     * Dogadajcie się z IClientRepository jak ma wyglądać klasa Client. 
+     * 
+    */
+    /*
     [DataContract]
     public class Client
     {
@@ -54,5 +59,6 @@ namespace Contracts
         public DateTime CreationDate { get; set; }
 
     }
+    */
      
 }
