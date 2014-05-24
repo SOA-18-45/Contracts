@@ -11,13 +11,19 @@ namespace Contracts
     public interface IAccountRepository
     {
         [OperationContract]
-        string CreateAccount(Guid clientId, AccountDetails details);
+        string CreateAccount(Guid clientId, AccountDetails details); //returns null if fails
 
         [OperationContract]
-        AccountDetails GetAccountInformation(string accountNumber);
+        AccountDetails GetAccountInformation(string accountNumber); //returns null if fails
 
         [OperationContract]
-        void UpdateAccountInformation(AccountDetails details);
+        List<AccountDetails> GetAccountsById(Guid clientId); //returns null if fails
+
+        [OperationContract]
+        List<AccountDetails> GetAllAccounts(); //returns null if fails
+
+        [OperationContract]
+        bool UpdateAccountInformation(AccountDetails details); //returns 'false' if fails
     }
 
     [DataContract]
