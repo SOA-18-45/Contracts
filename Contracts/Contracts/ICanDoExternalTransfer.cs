@@ -12,20 +12,26 @@ namespace Contracts
     public interface ICanDoExternalTransfer
     {
         [OperationContract]
-        bool TransferMoney(Guid clientID, Guid externalClientID, double amount);
+        bool TransferMoney(string clientAccountNumber, string recieverAccountNumber, double amount);
 
         [OperationContract]
-        Transfer[] GetPreviousTransfers();
+        List<Transfer> GetPreviousTransfers(string accountNumber);
     }
 
     [DataContract]
     public class Transfer
     {
         [DataMember]
+        public Guid ID { get; set; }
+        
+        [DataMember]
         public Guid clientID { get; set; }
 
         [DataMember]
-        public Guid externalClientID { get; set; }
+        public string clientAccountNumber { get; set; }
+
+        [DataMember]
+        public string recieverAccountNumber { get; set; }
 
         [DataMember]
         public double amount { get; set; }
@@ -33,6 +39,11 @@ namespace Contracts
         [DataMember]
         public bool wasSuccessful { get; set; }
 
+        [DataMember]
+        public string description { get; set; }
+
+        [DataMember]
+        public DateTime date { get; set; }
     }
 
 }
