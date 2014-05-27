@@ -30,9 +30,9 @@ namespace Contracts
     public class BasicAccountInfo
     {
         [DataMember]
-        string AccountNumber;
+        string AccountNumber { get; set; }
         [DataMember]
-        decimal Money;
+        decimal Money { get; set; }
     }
 
     [DataContract]
@@ -42,10 +42,10 @@ namespace Contracts
     public class Audit
     {
         [DataMember]
-        string AuditDate;
+        string AuditDate { get; set; }
         [DataMember]
-        AuditType Type;
+        AuditType Type { get; set; }
         [DataMember]
-        string Auditor;
+        string Auditor { get; set; }
     }
 }
