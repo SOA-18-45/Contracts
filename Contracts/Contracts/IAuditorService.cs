@@ -17,11 +17,13 @@ namespace Contracts
         [OperationContract]
         int GetAccountCount();
         [OperationContract]
-        int GetRORCount();
+        int GetAccountCountByType(string type);
         [OperationContract]
         IEnumerable<BasicAccountInfo> GetAccounts();
         [OperationContract]
-        bool AuditAll();
+        IEnumerable<BasicAccountInfo> GetAccountsByType(string type);
+        [OperationContract]
+        IEnumerable<Audit> GetAllAuditsData();
     }
 
     [DataContract]
@@ -30,6 +32,20 @@ namespace Contracts
         [DataMember]
         string AccountNumber;
         [DataMember]
-        decimal money;
+        decimal Money;
+    }
+
+    [DataContract]
+    enum AuditType { ClientCount, AccountCount, AccountByTypeCount, Accounts, AccountsByType }
+
+    [DataContract]
+    public class Audit
+    {
+        [DataMember]
+        string AuditDate;
+        [DataMember]
+        AuditType Type;
+        [DataMember]
+        string Auditor;
     }
 }
