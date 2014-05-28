@@ -37,7 +37,18 @@ namespace Contracts
     }
 
     [DataContract]
-    public enum AuditType { ClientCount, AccountCount, AccountByTypeCount, Accounts, AccountsByType }
+    public enum AuditType { 
+        [EnumMember]
+        ClientCount,
+        [EnumMember]
+        AccountCount,
+        [EnumMember]
+        AccountByTypeCount,
+        [EnumMember]
+        Accounts,
+        [EnumMember]
+        AccountsByType 
+    }
 
     [DataContract]
     public class Audit
