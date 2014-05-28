@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Contracts
 {
@@ -19,33 +20,34 @@ namespace Contracts
         [OperationContract]
         int GetAccountCountByType(string type);
         [OperationContract]
-        IEnumerable<BasicAccountInfo> GetAccounts();
+        List<BasicAccountInfo> GetAccounts();
         [OperationContract]
-        IEnumerable<BasicAccountInfo> GetAccountsByType(string type);
+        List<BasicAccountInfo> GetAccountsByType(string type);
         [OperationContract]
-        IEnumerable<Audit> GetAllAuditsData();
+        List<Audit> GetAllAuditsData();
     }
 
     [DataContract]
     public class BasicAccountInfo
     {
         [DataMember]
-        string AccountNumber { get; set; }
+        public string AccountNumber { get; set; }
         [DataMember]
-        decimal Money { get; set; }
+        public double Money { get; set; }
     }
 
     [DataContract]
-    enum AuditType { ClientCount, AccountCount, AccountByTypeCount, Accounts, AccountsByType }
+    public enum AuditType { ClientCount, AccountCount, AccountByTypeCount, Accounts, AccountsByType }
 
     [DataContract]
     public class Audit
     {
+        [Key]
         [DataMember]
-        string AuditDate { get; set; }
+        public Guid Id { get; set; }
         [DataMember]
-        AuditType Type { get; set; }
+        public string AuditDate { get; set; }
         [DataMember]
-        string Auditor { get; set; }
+        public AuditType Type { get; set; }
     }
 }
