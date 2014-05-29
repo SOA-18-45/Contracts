@@ -14,7 +14,7 @@ namespace Contracts
     public interface IDepositRepository
     {
         [OperationContract]
-        Guid CreateDeposit(Guid ClientID, Guid AccountID, string DepositType, double InterestRate);
+        Guid CreateDeposit(Guid ClientID, String AccountNumber, string DepositType, double InterestRate);
         [OperationContract]
         DepositDetails GetDepositDetails(Guid DepositID);
     }
@@ -27,7 +27,7 @@ namespace Contracts
         [DataMember]
         public Guid ClientID { get; set; }
         [DataMember]
-        public Guid AccountID { get; set; }
+        public String AccountNumber { get; set; }
         [DataMember]
         public string DepositType { get; set; } // Current Account, Time Deposit
         [DataMember]
