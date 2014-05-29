@@ -14,10 +14,10 @@ namespace Contracts
         Guid CreateClient(string name, string lastName, string PESEL, string address);
 
         [OperationContract]
-        Client GetClientInformationById(Guid idClient);
+        ClientRepo GetClientInformationById(Guid idClient);
 
         [OperationContract]
-        Client GetClientInformationByName(string name, string lastName);
+        ClientRepo GetClientInformationByName(string name, string lastName);
 
         [OperationContract]
         void RemoveClientByName(string name, string lastName);
@@ -26,7 +26,7 @@ namespace Contracts
         void RemoveClientById(Guid idClient);
     }
     [DataContract]
-    public class Client
+    public class ClientRepo
     {
         [DataMember]
         public Guid IdClient { get; set; }
