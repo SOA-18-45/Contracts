@@ -18,7 +18,10 @@ namespace Contracts
         int TransferMoneyGuid(Guid AccountGuid1, Guid AccountGuid2, double value); // pozwala na wykonanie przelewu na podstawie numeru Guid kont
 
         [OperationContract]
-        List<HistoryItem> TransferHistoryForAccount(DateTime DateFrom, DateTime DateTo, String AccountNumber); // pozwala na zwrócenie historii przelewów dla danego numeru konta w podanych zakresie czasowym
+        List<HistoryItem> TransferHistoryForAccountBeetweenDates(DateTime DateFrom, DateTime DateTo, String AccountNumber); // pozwala na zwrócenie historii przelewów dla danego numeru konta w podanych zakresie czasowym
+
+        [OperationContract]
+        List<HistoryItem> TransferHistoryForAccount(String AccountNumber); // pozwala na zwrócenie historii przelewów dla danego numeru konta w podanych zakresie czasowym
 
         [OperationContract]
         List<HistoryItem> TransferHistoryAccountGuid(DateTime DateFrom, DateTime DateTo, Guid AccountGuid); // pozwala na zwrócenie historii przelewów dla danego numeru Guid konta w podanych zakresie czasowym
