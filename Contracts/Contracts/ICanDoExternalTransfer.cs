@@ -16,6 +16,15 @@ namespace Contracts
 
         [OperationContract]
         List<Transfer> GetPreviousTransfers(string accountNumber);
+
+        [OperationContract]
+        List<Transfer> GetPreviousTransfersSentFrom(string accountNumber);
+
+        [OperationContract]
+        List<Transfer> GetPreviousTransfersSentTo(string accountNumber);
+
+        [OperationContract]
+        List<Transfer> GetPreviousTransfersFromDate(DateTime startDate);
     }
 
     [DataContract]
