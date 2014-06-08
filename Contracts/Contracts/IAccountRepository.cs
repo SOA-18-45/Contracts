@@ -11,7 +11,10 @@ namespace Contracts
     public interface IAccountRepository
     {
         [OperationContract]
-        string CreateAccount(Guid clientId, AccountDetails details); //returns null if fails
+        string CreateAccount(string pesel, AccountDetails details); //returns null if fails
+
+        [OperationContract]
+        string CreateAccountByName(string firstName, string lastName, AccountDetails details); //returns null if fails
 
         [OperationContract]
         AccountDetails GetAccountInformation(string accountNumber); //returns null if fails
