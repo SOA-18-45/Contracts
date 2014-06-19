@@ -8,14 +8,17 @@ using System.Runtime.Serialization;
 namespace Contracts
 {
     [DataContract]
-    public class AccountInfo
+    public class ServiceRepositoryMessage
     {
+        [DataMember]
+        public string FunctionName { get; set; }
+
         [DataMember]
         public string ServiceName { get; set; }
 
         [DataMember]
         public string ServiceAddress { get; set; }
-        
+
         [DataMember]
         public string BindingType { get; set; }
     }
