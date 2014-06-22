@@ -13,8 +13,8 @@ namespace Contracts
         [OperationContract]
         string CreateAccount(string pesel, AccountDetails details); //returns null if fails
 
-        [OperationContract]
-        string CreateAccountByName(string firstName, string lastName, AccountDetails details); //returns null if fails
+        //[OperationContract]
+        //string CreateAccountByName(string firstName, string lastName, AccountDetails details); //returns null if fails
 
         [OperationContract]
         AccountDetails GetAccountInformation(string accountNumber); //returns null if fails
@@ -28,6 +28,34 @@ namespace Contracts
         [OperationContract]
         bool UpdateAccountInformation(AccountDetails details); //returns 'false' if fails
     }
+
+    public class AccountRepositoryMessage
+    {
+        public string Action { get; set; }
+        public string Arguments { get; set; }
+    }
+
+    public class CreateAccountMessage
+    {
+        public string Pesel { get; set; }
+        public AccountDetails AccountDetails { get; set; }
+    }
+
+    public class GetAccountInformationMessage
+    {
+        public string AccountNumber { get; set; }
+    }
+
+    public class GetAccountsByIdMessage
+    {
+        public Guid ClientID { get; set; }
+    }
+
+    public class UpdateAccountInformationMessage
+    {
+        public AccountDetails AccountDetails { get; set; }
+    }
+
 
     [DataContract]
     public class AccountDetails
