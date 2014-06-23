@@ -44,4 +44,14 @@ namespace Contracts
         [DataMember]
         public DateTime TransactionDate { get; set; }
     }
+
+    [DataContract]
+    public class ICanTransferMoneyMessage
+    {
+        [DataMember]
+        public string Action { get; set; }
+
+        [DataMember]
+        public string Arguments { get; set; }
+    }
 }

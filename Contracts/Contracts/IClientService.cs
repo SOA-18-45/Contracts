@@ -12,7 +12,11 @@ namespace Contracts
     public interface IClientService
     {
         [OperationContract]
-        Client getClientInfo(Guid id);
+        ClientRepo getClientInfo(Guid id);
+        /*
+         * Zmieniłem na ClientRepo bo wywalało błąd gdy kompilowałem.
+         * Mariusz
+         */
 
     }
 
